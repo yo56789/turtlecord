@@ -14,9 +14,9 @@ else if ws then
             ws.close()
             break
         end
-        -- if obj.type == "eval" then
-        --     local funcrunned = load(obj.code)
-        --     print(funcrunned())
-        -- end
+        if obj.type == "eval" then
+            local funcrunned = load(obj.code)
+            print(funcrunned())
+        end
     end
 end 
