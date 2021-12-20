@@ -1,5 +1,5 @@
 os.loadAPI("json")
-local ws, err = http.websocket("ws://e931-108-49-248-149.ngrok.io") -- replace url.ngrok.io with your ngrok url
+local ws, err = http.websocket("") -- use your own websocket url here
 
 if err then
     print(err)
@@ -14,9 +14,9 @@ else if ws then
             ws.close()
             break
         end
-        if obj.type == "eval" then
-            local funcrunned = load(obj.code)
-            print(funcrunned())
-        end
+        -- if obj.type == "eval" then
+        --     local funcrunned = load(obj.code)
+        --     print(funcrunned())
+        -- end
     end
 end 
