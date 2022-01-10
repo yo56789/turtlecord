@@ -16,6 +16,7 @@ export default class discord {
         this.commands = commands;
         this.rest = new REST({ version: '9' }).setToken((JSON.parse(readFileSync('./settings.json').toString())).token);
         this.applicationId = (JSON.parse(readFileSync('./settings.json').toString())).appid;
+        this.guildId = (JSON.parse(readFileSync('./settings.json').toString())).guildid;
     }
 
     addTurtle(turtle: turtle) {
@@ -27,7 +28,7 @@ export default class discord {
             console.log('Refreshing / commands');
 
             await this.rest.put(
-                Routes.applicationGuildCommands(this.applicationId, '801646969676234782'),
+                Routes.applicationGuildCommands(this.applicationId, this.guildId),
                 { body: this.commands }
             );
             console.log("Successfully reloaded / commands");
