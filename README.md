@@ -1,4 +1,4 @@
-# Disturtle
+# Turtlecord
 Move a turtle from the cc-tweaked using a discord bot
 
 # Requirements
